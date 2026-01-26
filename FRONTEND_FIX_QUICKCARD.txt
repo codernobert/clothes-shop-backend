@@ -1,0 +1,30 @@
+﻿═══════════════════════════════════════════════════════════════
+   🔧 FRONTEND FIX - Root Directory Configuration
+═══════════════════════════════════════════════════════════════
+ISSUE: Blank white screen at root URL
+CAUSE: Files are in /frontend/ subdirectory
+Your files ARE working at:
+https://clothes-shop-frontend-production.up.railway.app/frontend/
+═══════════════════════════════════════════════════════════════
+QUICK FIX (2 minutes):
+1. Railway Dashboard → Frontend Service
+2. Click Settings tab
+3. Find "Root Directory" field
+4. Set to: frontend
+5. Click Save/Deploy
+6. Wait 2 minutes for redeploy
+7. Test: https://clothes-shop-frontend-production.up.railway.app/
+═══════════════════════════════════════════════════════════════
+ALSO UPDATE BACKEND:
+Railway Backend → Variables → Update:
+PAYSTACK_CALLBACK_URL=https://clothes-shop-frontend-production.up.railway.app/frontend/payment_callback.php
+(After fixing root directory, change back to /payment_callback.php)
+═══════════════════════════════════════════════════════════════
+TEST NOW (Before fixing):
+Homepage: /frontend/index.php
+Products: /frontend/products.php
+Admin: /frontend/admin/
+All these should work right now!
+═══════════════════════════════════════════════════════════════
+FULL GUIDE: FRONTEND_ROOT_DIRECTORY_FIX.md
+═══════════════════════════════════════════════════════════════
