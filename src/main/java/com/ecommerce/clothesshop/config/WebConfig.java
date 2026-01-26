@@ -1,5 +1,9 @@
 package com.ecommerce.clothesshop.config;
 
+// Temporarily disabled for deployment
+// Uncomment the imports and class below after successful deploy
+
+/*
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.EnableWebFlux;
@@ -23,3 +27,4 @@ public class WebConfig implements WebFluxConfigurer {
             .maxAge(3600);
     }
 }
+*/
