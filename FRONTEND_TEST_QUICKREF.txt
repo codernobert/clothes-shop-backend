@@ -1,0 +1,49 @@
+﻿═══════════════════════════════════════════════════════════════
+     🧪 FRONTEND TESTING - QUICK REFERENCE CARD
+═══════════════════════════════════════════════════════════════
+URLS:
+Backend:  https://clothes-shop-backend-production.up.railway.app
+Frontend: https://clothes-shop-frontend-production.up.railway.app
+═══════════════════════════════════════════════════════════════
+⚡ 3-STEP QUICK TEST (5 minutes):
+1. TEST BACKEND
+   curl https://clothes-shop-backend-production.up.railway.app/actuator/health
+   → Should return: {\"status\":\"UP\"}
+2. OPEN FRONTEND
+   • Open: https://clothes-shop-frontend-production.up.railway.app
+   • Press F12 (Developer Tools)
+   • Click Console tab
+   • Look for errors
+3. CHECK NETWORK
+   • Click Network tab in DevTools
+   • Refresh page
+   • Look for API calls to backend
+   • Status should be 200 OK (green)
+═══════════════════════════════════════════════════════════════
+📋 TESTING CHECKLIST:
+BASIC:
+☐ Homepage loads
+☐ No console errors
+☐ No CORS errors
+PRODUCTS:
+☐ Products display (if in database)
+☐ Click product works
+CART:
+☐ Add to cart works
+☐ Cart count updates
+☐ View cart shows items
+CHECKOUT:
+☐ Checkout loads
+☐ Payment initializes
+═══════════════════════════════════════════════════════════════
+🐛 COMMON ISSUES:
+CORS ERRORS
+→ Wait 2-3 minutes for backend redeploy
+→ Hard refresh: Ctrl+Shift+R
+NO PRODUCTS
+→ Database is empty! Add products via API
+FAILED TO FETCH
+→ Check backend is running (Railway dashboard)
+═══════════════════════════════════════════════════════════════
+📚 FULL GUIDE: FRONTEND_TESTING_GUIDE.md
+═══════════════════════════════════════════════════════════════

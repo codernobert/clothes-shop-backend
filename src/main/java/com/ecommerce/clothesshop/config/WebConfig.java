@@ -12,9 +12,11 @@ public class WebConfig implements WebFluxConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins(
+            .allowedOriginPatterns(
                 "https://clothes-shop-frontend-production.up.railway.app",
-                "http://localhost:8000",
+                "https://clothes-shop-frontend-production.up.railway.app/**",
+                "http://localhost:8080",
+                "http://localhost:8080/**",
                 "http://localhost:3000"
             )
             .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
