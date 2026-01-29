@@ -27,6 +27,3 @@ public class User {
     private LocalDateTime updatedAt;
 }
 
-enum UserRole {
-    CUSTOMER, ADMIN
-}
