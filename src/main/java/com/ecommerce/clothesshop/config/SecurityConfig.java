@@ -40,7 +40,16 @@ public class SecurityConfig {
                         // Public endpoints - Health check
                         .pathMatchers("/actuator/**", "/health").permitAll()
 
-                        // Admin endpoints
+                        // Public endpoints - Dashboard & static resources
+                        .pathMatchers("/**/*.html").permitAll()
+                        .pathMatchers("/**/*.css").permitAll()
+                        .pathMatchers("/**/*.js").permitAll()
+                        .pathMatchers("/**/*.json").permitAll()
+                        .pathMatchers("/**/*.ico").permitAll()
+                        .pathMatchers("/admin-analytics-dashboard.html").permitAll()
+                        .pathMatchers("/index.html").permitAll()
+
+                        // Admin endpoints - require admin role
                         .pathMatchers("/api/admin/**").hasRole("ADMIN")
 
                         // Protected endpoints - require authentication

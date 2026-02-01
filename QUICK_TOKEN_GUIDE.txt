@@ -1,0 +1,132 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║         🔐 POSTMAN JWT TOKEN GENERATION - QUICK GUIDE 🔐     ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📊 ENDPOINT TO GENERATE TOKEN
+
+Route:   POST /api/auth/login
+URL:     http://localhost:8080/api/auth/login
+Auth:    None (Public endpoint)
+
+═══════════════════════════════════════════════════════════════
+
+📝 REQUEST BODY
+
+{
+  "email": "admin@example.com",
+  "password": "password123"
+}
+
+═══════════════════════════════════════════════════════════════
+
+✅ RESPONSE
+
+{
+  "success": true,
+  "data": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "userId": 1,
+    "role": "ADMIN"
+  }
+}
+
+═══════════════════════════════════════════════════════════════
+
+🔑 TOKEN FEATURES
+
+✅ Automatically saved to Postman environment
+✅ Auto-added to all subsequent requests
+✅ Valid for all analytics endpoints
+✅ Includes ADMIN role privileges
+✅ Used in Bearer token format
+
+═══════════════════════════════════════════════════════════════
+
+🚀 HOW TO USE IN POSTMAN
+
+Step 1: Import Admin_Analytics_API.postman_collection.json
+Step 2: Open "Authentication" folder
+Step 3: Run "Login - Get JWT Token"
+Step 4: Token saved automatically to {{jwt_token}}
+Step 5: All other endpoints auto-use the token
+
+═══════════════════════════════════════════════════════════════
+
+📋 ALL ANALYTICS ENDPOINTS (Now with Auth)
+
+GET /api/admin/analytics/dashboard          ✅ Need token
+GET /api/admin/analytics/revenue            ✅ Need token
+GET /api/admin/analytics/orders             ✅ Need token
+GET /api/admin/analytics/products           ✅ Need token
+GET /api/admin/analytics/customers          ✅ Need token
+GET /api/admin/analytics/payments           ✅ Need token
+
+═══════════════════════════════════════════════════════════════
+
+💡 QUICK STEPS TO TEST
+
+1. Start backend:     mvn spring-boot:run
+2. Open Postman
+3. Import collection
+4. Run login endpoint
+5. Run any analytics endpoint ✓
+
+═══════════════════════════════════════════════════════════════
+
+🔒 AUTHORIZATION HEADER (Automatic)
+
+Authorization: Bearer {{jwt_token}}
+
+✅ This header is automatically added to all requests
+✅ Token is extracted from login response
+✅ Token is saved to Postman environment
+
+═══════════════════════════════════════════════════════════════
+
+📊 COMPLETE WORKFLOW
+
+┌─────────────────────────────────────────────────────────────┐
+│ 1. POST /api/auth/login                                     │
+│    ↓ Get access token                                       │
+│ 2. Token saved to {{jwt_token}}                              │
+│    ↓ Auto-added to Authorization header                     │
+│ 3. GET /api/admin/analytics/dashboard                       │
+│    ↓ Request includes Bearer token                          │
+│ 4. ✅ Authorized! Get analytics data                        │
+└─────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════
+
+🎯 DEFAULT ADMIN CREDENTIALS
+
+Email:    admin@example.com
+Password: password123
+
+Note: Update these in your actual environment!
+
+═══════════════════════════════════════════════════════════════
+
+✨ FEATURES
+
+✅ JWT Bearer token authentication
+✅ Auto token extraction & storage
+✅ Pre-configured for all endpoints
+✅ Test scripts included
+✅ Response validation
+✅ Error handling
+
+═══════════════════════════════════════════════════════════════
+
+📞 IF TOKEN EXPIRES
+
+1. Re-run login endpoint
+2. New token saved to environment
+3. All requests updated automatically
+
+═══════════════════════════════════════════════════════════════
+
+🚀 READY TO TEST!
+
+Import the updated Postman collection and start testing!
