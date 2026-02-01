@@ -100,10 +100,11 @@ CREATE INDEX IF NOT EXISTS idx_cart_user ON shopping_carts(user_id);
 --     ON CONFLICT (email) DO NOTHING;
 --
 
-INSERT INTO products (name, description, price, category, sub_category, brand, size, color, gender, stock_quantity, image_url)
-VALUES
-        ('Classic Cotton T-Shirt', 'Comfortable cotton t-shirt for everyday wear', 29.99, 'TOPS', 'T-SHIRTS', 'BasicWear', 'M', 'White', 'UNISEX', 100, 'https://example.com/tshirt1.jpg'),
-        ('Slim Fit Jeans', 'Modern slim fit denim jeans', 79.99, 'BOTTOMS', 'JEANS', 'DenimCo', '32', 'Blue', 'MEN', 50, 'https://example.com/jeans1.jpg'),
-        ('Summer Dress', 'Floral print summer dress', 89.99, 'DRESSES', 'CASUAL', 'FashionFirst', 'S', 'Floral', 'WOMEN', 30, 'https://example.com/dress1.jpg'),
-        ('Leather Jacket', 'Premium leather jacket', 299.99, 'OUTERWEAR', 'JACKETS', 'LuxeStyle', 'L', 'Black', 'UNISEX', 20, 'https://example.com/jacket1.jpg')
-    ON CONFLICT DO NOTHING;
+-- INSERT INTO products (name, description, price, category, sub_category, brand, size, color, gender, stock_quantity, image_url)
+-- VALUES
+--         ('Classic Cotton T-Shirt', 'Comfortable cotton t-shirt for everyday wear', 29.99, 'TOPS', 'T-SHIRTS', 'BasicWear', 'M', 'White', 'UNISEX', 100, 'https://example.com/tshirt1.jpg'),
+--         ('Slim Fit Jeans', 'Modern slim fit denim jeans', 79.99, 'BOTTOMS', 'JEANS', 'DenimCo', '32', 'Blue', 'MEN', 50, 'https://example.com/jeans1.jpg'),
+--         ('Summer Dress', 'Floral print summer dress', 89.99, 'DRESSES', 'CASUAL', 'FashionFirst', 'S', 'Floral', 'WOMEN', 30, 'https://example.com/dress1.jpg'),
+--         ('Leather Jacket', 'Premium leather jacket', 299.99, 'OUTERWEAR', 'JACKETS', 'LuxeStyle', 'L', 'Black', 'UNISEX', 20, 'https://example.com/jacket1.jpg')
+--     ON CONFLICT DO NOTHING;
+
