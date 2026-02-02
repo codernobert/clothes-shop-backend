@@ -107,4 +107,3 @@ CREATE INDEX IF NOT EXISTS idx_cart_user ON shopping_carts(user_id);
 --         ('Summer Dress', 'Floral print summer dress', 89.99, 'DRESSES', 'CASUAL', 'FashionFirst', 'S', 'Floral', 'WOMEN', 30, 'https://example.com/dress1.jpg'),
 --         ('Leather Jacket', 'Premium leather jacket', 299.99, 'OUTERWEAR', 'JACKETS', 'LuxeStyle', 'L', 'Black', 'UNISEX', 20, 'https://example.com/jacket1.jpg')
 --     ON CONFLICT DO NOTHING;
-
