@@ -46,7 +46,6 @@ public class SecurityConfig {
                         .pathMatchers("/**/*.js").permitAll()
                         .pathMatchers("/**/*.json").permitAll()
                         .pathMatchers("/**/*.ico").permitAll()
-                        .pathMatchers("/admin-analytics-dashboard.html").permitAll()
                         .pathMatchers("/index.html").permitAll()
 
                         // Admin endpoints - require admin role
