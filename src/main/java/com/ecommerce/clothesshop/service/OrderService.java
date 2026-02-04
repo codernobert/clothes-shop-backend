@@ -26,6 +26,22 @@ public class OrderService {
     private final ProductRepository productRepository;
     private final ProductService productService;
     
+    /**
+     * Normalize payment method for storage
+     * Converts PAYSTACK to Card, keeps M-Pesa as is
+     */
+    private String normalizePaymentMethod(String paymentMethod) {
+        if (paymentMethod == null) {
+            return "Card"; // Default to Card
+        }
+
+        return switch (paymentMethod.toUpperCase()) {
+            case "PAYSTACK" -> "Card";
+            case "MPESA" -> "M-Pesa";
+            default -> paymentMethod;
+        };
+    }
+
     public Mono<OrderResponse> createOrder(CheckoutRequest request) {
         return cartRepository.findByUserId(request.getUserId())
             .flatMap(cart -> cartItemRepository.findByCartId(cart.getId())
@@ -46,7 +62,7 @@ public class OrderService {
                         .orderNumber(generateOrderNumber())
                         .totalAmount(totalAmount)
                         .status(OrderStatus.PENDING)
-                        .paymentMethod(request.getPaymentMethod())
+                        .paymentMethod(normalizePaymentMethod(request.getPaymentMethod()))
                         .paymentStatus(PaymentStatus.PENDING)
                         .shippingAddress(request.getShippingAddress())
                         .createdAt(LocalDateTime.now())
